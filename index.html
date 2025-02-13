@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <p class="title">Rock Paper Scissors</p>
+        
+        <button 
+        onclick="
+        let result='';
+        //I want to display the result of the comparison
+        const computerMove=pickComputerMove();
+        playGame('rock');" class="move-button"
+        ><img src="Images/rock-emoji.png" class="move-icon" alt=""></button>
+
+        <button
+        onclick="
+        let result='';
+        const computerMove=pickComputerMove();
+        //I want to display the result of the comparison
+        playGame('paper');" class="move-button"
+        ><img src="Images/paper-emoji.png" alt="" class="move-icon"></button>
+
+        <button
+        onclick="
+        const randomNumber=Math.random();
+        let result='';
+        playGame('scissors');" class="move-button"
+        ><img src="Images/scissors-emoji.png" alt="" class="move-icon"></button>
+
+        <p class="js-result result"></p>
+        <p class="js-moves"></p>
+        <p class="js-score score"></p>
+
+
+        <button onclick="
+        score.wins=0;
+        score.loses=0;
+        score.ties=0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        " class="reset-score-button">Reset Score</button>
+
+        <button onclick="autoPlay();" class="autoPlay-button">Auto Play</button>
+        
+        <script src="rock-paper-scissors.js"></script>
+    </body>
+</html>
