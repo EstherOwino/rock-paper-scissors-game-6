@@ -18,9 +18,12 @@ if(!score){
 let isAutoPlaying = false;
 let intervalId; 
 
+//const autoPlay = () => {};
 function autoPlay(){
     if(!isAutoPlaying){
-        intervalId = setInterval(function(){
+        //using an arrow function instead of:
+        //intervalId = setInterval(function(){})
+        intervalId = setInterval(() => {
             const playerMove = pickComputerMove();
             playGame(playerMove);
         }, 1000);
